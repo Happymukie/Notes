@@ -15,9 +15,7 @@ date: 2021-11-30 09:55
 增长运算符 "$++$" << "$x++$"表示$x$的后继（下一项）
 
 <span id="1.1.2">**定义 1.1.2**</span>
-起始元 "$0$" << 自然数的起始元素
-
-仅根据Peano公理的前两条，不能排除 $1=0, 2=0, 3=0 \dots$ 的自然数集合，因为若 $0++=0$，则 $1=0$ ([1.1.2](#1.1.2)). 同理可能存在$2=1, 9=3 \dots$ 因此需要后两条定理。
+起始元 "$0$" << 自然数的起始元素  
 
 <span id="1.1.3">**定义 1.1.3**</span>
 "$1$" << $0++$, "$2$" << $1++$ // $(0++)++$, "$3$" << $2++$ // $((0++)++)++$
@@ -31,24 +29,35 @@ $0$ 是一个自然数 >> $0 \in \mathbb N$
 <span id="Peano.2">**Peano.2**</span>
 $\forall n \in \mathbb N$，都存在$n++$且$(n++) \in \mathbb N$  
 
+仅根据Peano公理的前两条，不能排除 $1=0, 2=0, 3=0 \dots$ 的自然数集合，因为若 $0++=0$，则 $1=0$ ([1.1.2](#1.1.2)). 同理可能存在$2=1, 9=3 \dots$ 因此需要后两条定理.  
+
 <span id="Peano.3">**Peano.3**</span>
 $\forall n \in \mathbb N,~ n++ \neq 0$  
 
 <span id="Peano.4">**Peano.4**</span>
-若 $n,m \in \mathbb N$ 且 $n \neq m$，则$n++ \neq m++$ || 若 $n++ \neq m++$，则 $n=m$  
+若 $n,m \in \mathbb N$ 且 $n \neq m$，则$n++ \neq m++$ || 若 $n++ = m++$，则 $n=m$  
+
+至Peano公理的第四条为止，无法排除自然数出现“双链”结构  
+例如对于这样一个自然数系 $\mathbb N'$ << $0++=1, 1++=2, 2++=3 \dots, \mathrm{i}++=\mathrm{ii}, \mathrm{ii}++=\mathrm{iii}, \mathrm{iii}++=\mathrm{i}$  
+所以定理5是必要的. 
 
 <span id="Peano.5">**Peano.5 // MI**</span>
 设 $P(n)$ 为某个自然数的性质，若 $P(0) \to \mathbf T$，且$(P(n) \to \mathbf T) \Rightarrow (P(n++) \to \mathbf T)$，则对于 $\forall n \in \mathbb N$，$P(n) \to \mathbf T$ 
 || 数学归纳法  
-
-
 
 <span id="1.1.5"> **命题 1.1.5** </span> [1.1.2](#1.1.2) 中定义的所有数都是自然数  
 **证** 任取其中一个数 $n$  
 1. $0 \in \mathbb N$ <span style="float:right;">([1.1.1](#1.1.1))</span>  
 2. $1=(0++) \in \mathbb N$ <span style="float:right;">([1.1.2](#1.1.2))</span>
 3. $2=(1++) \in \mathbb N$ <span style="float:right;">([1.1.3](#1.1.3))</span>
-4. 以此类推，[1.1.2](#1.1.2) 中定义的所有数都是自然数  
+4. 以此类推，[1.1.2](#1.1.2) 中定义的所有数都是自然数. <span style="float:right;">$\square$</span>  
+
+<span id="1.1.6"> **命题 1.1.6** </span> [1.1.2](#1.1.2) $6$ 不等于 $2$  
+**证$^!$** 若 $6=2$,  
+1. $5++=1++$ <span style="float:right;">([1.1.2](#1.1.2))</span>
+2. $5=1$ <span style="float:right;">([Peano.4](#Peano.4))</span>
+3. 
+
 
 
 
